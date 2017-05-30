@@ -15,7 +15,7 @@ squadra(inter;torino).
 
 % ----- regole --------
 
-ha_tipo(X,onesto):-tifa(X,inter),ha_eta(X,anziano).  
+ha_tipo(X,onesto):-tifa(X,inter),ha_eta(X,anziano).
 ha_tipo(X,bugiardo):-tifa(X,inter),ha_eta(X,giovane).
 ha_tipo(X,onesto):-tifa(X,torino),ha_eta(X,giovane).
 ha_tipo(X,bugiardo):-tifa(X,torino),ha_eta(X,anziano).
