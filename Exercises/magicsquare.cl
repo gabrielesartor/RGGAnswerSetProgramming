@@ -16,13 +16,13 @@ magic_constant((n * (n * n + 1)) / 2).
 % Every cell must be filled with a distinct number.
 :- magic_cell(R1,C1,V), magic_cell(R2,C2,V), 1 {R1 != R2; C1 != C2} 2.
 
-%Given a row, the sum of its integers must be equal to the magic constant
+% Given a row, the sum of its integers must be equal to the magic constant
 row_OK(R) :- S = #sum { V : magic_cell(R,C,V), col(C) }, row(R), magic_constant(S).
-%Given a column, the sum of its integers must be equal to the magic constant
+% Given a column, the sum of its integers must be equal to the magic constant
 column_OK(C) :- S = #sum { V: magic_cell(R,C,V), row(R) }, col(C), magic_constant(S).
-%Given the primary diagonal, the sum of its integers must be equal to the magic constant
+% Given the primary diagonal, the sum of its integers must be equal to the magic constant
 primarydiagonal_OK :- S = #sum { V : magic_cell(R,R,V), row(R) }, magic_constant(S).
-%Given the secondary diagonal, the sum of its integers must be equal to the magic constant
+% Given the secondary diagonal, the sum of its integers must be equal to the magic constant
 secondarydiagonal_OK :- S = #sum { V : magic_cell(R,n + 1 - R,V), row(R) }, magic_constant(S).
 
 % There must be exactly n rows in which the sum of their integers is equal to the magic constant.
